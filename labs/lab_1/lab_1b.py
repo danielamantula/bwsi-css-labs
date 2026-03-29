@@ -29,6 +29,15 @@ def main():
             continue
         break
     def simple_calculator(final_num1: float, final_num2: float) -> float:
+# Function that takes in two numbers and an operation (add, subtract, multiply, divide),
+# then performs the operation on the two numbers and returns the result.
+# Args:
+#   operation (str): The operation to perform ("add", "subtract", "multiply", "divide").
+#   final_num1 (float): The first number.
+#   final_num2 (float): The second number.
+# Returns:
+#   float: The result of the operation.
+#   operation: The operation performed.
         while True: 
             try:
                 operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
