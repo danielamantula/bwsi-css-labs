@@ -40,16 +40,25 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
 def main():
     
     print(f"===== Simple Calculator =====")
-
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+    while True:
+        try:
+            num1 = input("Enter the first number: ")
+            final_num1 = float(num1)
+        except ValueError:
+            print("\n That is not a valid first value! Please enter another value, with no letters or extraneous elements.")
+            continue
+        break
+    while True:
+        try:
+            num2 = input("Enter the second number: ") 
+            final_num2 = float(num2)
+        except ValueError:
+            print("\n That is not a valid second value! Please enter another value, with no letters or extraneous elements.")
+            continue
+        break
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
-
-    # Perform the calculation and display the result
-    result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
-
-
+    result = simple_calculator(operation, final_num1, final_num2)
+    print(f"The result of {operation}ing {final_num1} and {final_num2} is: {result}")
 if __name__ == "__main__":
     main()
